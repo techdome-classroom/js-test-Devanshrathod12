@@ -16,7 +16,6 @@ const getTotalIsles = function (grid) {
 
   // Define the DFS function to traverse the grid
   function dfs(row, col) {
-    // Check if the cell is within the grid boundaries and is a landmass
     if (row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] === 'W' || visited[row][col]) {
       return;
     }
