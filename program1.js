@@ -1,10 +1,7 @@
 const getTotalIsles = function (grid) {
-  // Check if the grid is empty
   if (!grid || grid.length === 0) {
     return 0;
   }
-
-  // Get the number of rows and columns in the grid
   const rows = grid.length;
   const cols = grid[0].length;
   const visited = new Array(rows).fill(0).map(() => new Array(cols).fill(false));
