@@ -11,10 +11,7 @@ const getTotalIsles = function (grid) {
   // Initialize a visited matrix to keep track of visited cells
   const visited = new Array(rows).fill(0).map(() => new Array(cols).fill(false));
 
-  // Initialize the count of islands
   let islandCount = 0;
-
-  // Define the DFS function to traverse the grid
   function dfs(row, col) {
     if (row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] === 'W' || visited[row][col]) {
       return;
