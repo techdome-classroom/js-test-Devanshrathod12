@@ -21,17 +21,12 @@ const getTotalIsles = function (grid) {
       return;
     }
 
-    // Mark the cell as visited
     visited[row][col] = true;
-
-    // Recursively traverse the neighboring cells
-    dfs(row - 1, col); // Up
-    dfs(row + 1, col); // Down
-    dfs(row, col - 1); // Left
-    dfs(row, col + 1); // Right
+    dfs(row - 1, col); 
+    dfs(row + 1, col); 
+    dfs(row, col - 1); 
+    dfs(row, col + 1); 
   }
-
-  // Iterate through the grid to find distinct islands
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       if (grid[i][j] === 'L' && !visited[i][j]) {
