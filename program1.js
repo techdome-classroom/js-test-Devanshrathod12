@@ -42,7 +42,6 @@ const getTotalIsles = function (grid) {
     }
   }
 
-  // Return the total count of distinct islands
   return islandCount;
 };
 
