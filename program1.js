@@ -34,7 +34,6 @@ const getTotalIsles = function (grid) {
   // Iterate through the grid to find distinct islands
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      // If the cell is a landmass and not visited, it's a new island
       if (grid[i][j] === 'L' && !visited[i][j]) {
         islandCount++;
         dfs(i, j);
