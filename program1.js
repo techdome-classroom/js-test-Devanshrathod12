@@ -7,8 +7,6 @@ const getTotalIsles = function (grid) {
   // Get the number of rows and columns in the grid
   const rows = grid.length;
   const cols = grid[0].length;
-
-  // Initialize a visited matrix to keep track of visited cells
   const visited = new Array(rows).fill(0).map(() => new Array(cols).fill(false));
 
   let islandCount = 0;
