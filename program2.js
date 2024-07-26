@@ -29,6 +29,7 @@ const decodeTheRing = function (s, p) {
   }
 
   return sIndex === s.length && pIndex === p.length;
+  
 
 };
 
