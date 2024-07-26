@@ -1,8 +1,49 @@
 const getTotalIsles = function (grid) {
+  // Check if the grid is empty
+  if (!grid || grid.length === 0) {
+    return 0;
+  }
 
+  // Get the number of rows and columns in the grid
+  const rows = grid.length;
+  const cols = grid[0].length;
 
-  // write your code here
+  // Initialize a visited matrix to keep track of visited cells
+  const visited = new Array(rows).fill(0).map(() => new Array(cols).fill(false));
 
+  // Initialize the count of islands
+  let islandCount = 0;
+
+  // Define the DFS function to traverse the grid
+  function dfs(row, col) {
+    // Check if the cell is within the grid boundaries and is a landmass
+    if (row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] === 'W' || visited[row][col]) {
+      return;
+    }
+
+    // Mark the cell as visited
+    visited[row][col] = true;
+
+    // Recursively traverse the neighboring cells
+    dfs(row - 1, col); // Up
+    dfs(row + 1, col); // Down
+    dfs(row, col - 1); // Left
+    dfs(row, col + 1); // Right
+  }
+
+  // Iterate through the grid to find distinct islands
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      // If the cell is a landmass and not visited, it's a new island
+      if (grid[i][j] === 'L' && !visited[i][j]) {
+        islandCount++;
+        dfs(i, j);
+      }
+    }
+  }
+
+  // Return the total count of distinct islands
+  return islandCount;
 };
 
 module.exports = getTotalIsles;
